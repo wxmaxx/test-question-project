@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>JavaScript Trivia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="JavaScript, Test, Maxwell, Arrants">
+  <meta name="authors" content="Josh Arrants, Leon Maxwell">
+  <meta name="description" content="`Ten JavaScript Trivia Questions">
+
+  <!-- Bootstrap Stylesheet -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <div class="container-fluid jumbotron text-center text-white bg-primary">
+    <h1 class="display-1">JavaScript Trivia</h1>
+  </div>
+
+  <!-- Main -->
+
+  <div role="main" class="container text-left">
+    <br />
+
+    <form>
+
+      <h3 data-bind="text: currentQuestion().question"></h3>
+
+      <div class="form-group">
+
+        <br />
+
+        <div class="form-check ">
+          <input class="form-check-input" type="radio" name=answerGroup value="A" data-bind="checked: selectedAnswer">
+          <label data-bind="text: currentQuestion().answers[0]"></label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="answerGroup" value="B" data-bind="checked: selectedAnswer">
+          <label data-bind="text: currentQuestion().answers[1]"></label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="answerGroup" value="C" data-bind="checked: selectedAnswer">
+          <label data-bind="text: currentQuestion().answers[2]"></label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="answerGroup" value="D" data-bind="checked: selectedAnswer">
+          <label data-bind="text: currentQuestion().answers[3]"></label>
+        </div>
+
+      </div>
+
+      <br />
+
+      <div class="text-center">
+        <button type="button" class="btn btn-primary btn-lg" data-bind="click: previous">Previous</button>
+        <button type="button" class="btn btn-primary btn-lg" data-bind="click: next">Next</button>
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <br />
+
+  <div class="container text-left">
+    <h4></h4>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Questions</th>
+          <th scope="col">Selected Answer</th>
+          <th scope="col">Correct Answer</th>
+        </tr>
+      </thead>
+      <tbody data-bind="foreach: questions">
+        <tr>
+          <td data-bind="text: question"></td>
+          <td data-bind="text: selectedAnswer"></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <br>
+
+  <footer>
+
+  </footer>
+
+  <script src="script/knockout-3.4.2.js"></script>
+  <script src="script/test.js"></script>
+
+</body>

@@ -1,2 +1,7 @@
-# test-question-project
-This is my copy of the project
+# amProject
+WEB330 - Group Project
+
+Contributors
+
+Joshua Arrants - Bellevue University
+Leon Maxwell - Bellevue University 
